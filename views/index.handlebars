@@ -1,0 +1,36 @@
+<div class="row">  
+    <div class="col s6">
+        <ol>
+            {{#each burgers}}
+                {{#unless devoured}}
+                <li>{{burger_name}}</li>
+                <form action="/api/customer" method="POST" >
+                <input type="text" value={{id}} name="burger_id" hidden>
+                <input class="new-customer" type="text" placeholder="customer" name="customer_name">
+                <button type="submit" id="burger-devour" class="devour-btn">Devour</button>
+                </form>
+                {{/unless}}
+            {{/each}}
+        </ol>
+    </div>
+    <div class="col s6">
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                    <li class="devoured">The Burger, {{burger_name}}, was devoured by, {{customer.customer_name}}</li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col s4 offset-s4">
+        <form>
+            <label for="burger-name">Burger type</label>
+            <input type="text" id='burger-name'>
+            <button id='submit'>Submit</button>
+            
+        </form>
+    </div>  
+</div>
+

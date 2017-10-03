@@ -1,0 +1,12 @@
+body{
+    background-color: #FFFECF;
+}
+.burger-img{
+    margin-left: 25px;
+    width: 200px;
+}
+.devoured{
+    padding: 10px;
+    background-color: #FDF79C;
+    margin-bottom: 10px;
+}
